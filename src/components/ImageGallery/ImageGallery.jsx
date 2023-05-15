@@ -71,4 +71,6 @@ export const ImageGallery = ({ inputValue, onClick, loadMoreBtn, page }) => {
 ImageGallery.propTypes = {
   onClick: PropTypes.func.isRequired,
   inputValue: PropTypes.string.isRequired,
+  loadMoreBtn: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
 };
