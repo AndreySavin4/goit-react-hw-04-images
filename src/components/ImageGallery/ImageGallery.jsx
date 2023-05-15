@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-use-before-define */
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import s from './ImageGallery.module.css';
@@ -14,14 +16,14 @@ export const ImageGallery = ({ inputValue, onClick, loadMoreBtn, page }) => {
     if (inputValue) {
       fetchLoad();
     }
-  }, [inputValue]);
+  }, [fetchLoad, inputValue]);
 
   useEffect(() => {
     if (page > 1) {
       fetchLoadMore();
     }
     return;
-  }, [page]);
+  }, [fetchLoadMore, page]);
 
   const fetchLoad = () => {
     getImages(inputValue, page)
